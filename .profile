@@ -20,6 +20,10 @@ export PATH="$HOME/.luarocks/bin:$PATH"
 export PATH="$HOME/.gem/ruby/2.5.0/bin:$PATH"
 export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 
+# go
+export PATH="$HOME/go:$PATH"
+export PATH="$GO_HOME/bin:$PATH"
+
 # java
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 export PATH="$JAVA_HOME/bin:$PATH"
