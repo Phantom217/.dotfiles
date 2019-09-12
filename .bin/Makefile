@@ -26,7 +26,7 @@ install-root:
 	sudo install -Dm755 aur-tmpfs            '$(DESTDIR)$(BINDIR)'/aur-tmpfs
 	sudo install -Dm755 aur-update           '$(DESTDIR)$(BINDIR)'/aur-update
 	sudo install -Dm755 update-pacman-widget '$(DESTDIR)$(BINDIR)'/update-pacman-widget
-	
+
 	sudo install -Dm755 '$(HOMEDIR)'/.config/pacman/hooks/awesome-pacman-widget.hook '$(DESTDIR)$(CONFDIR)'/pacman.d/hooks/awesome-pacman-widget.hook
 
 uninstall-root:
@@ -41,7 +41,7 @@ uninstall-root:
 	rm -f '$(DESTDIR)$(BINDIR)'/aur-tmpfs
 	rm -f '$(DESTDIR)$(BINDIR)'/aur-update
 	rm -f '$(DESTDIR)$(BINDIR)'/update-pacman-widget
-	
+
 	rm -f '$(DESTDIR)$(CONFDIR)'/pacman.d/hooks/awesome-pacman-widget.hook
 
 install-user:
