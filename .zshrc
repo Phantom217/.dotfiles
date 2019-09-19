@@ -110,7 +110,7 @@ plugins=(
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
+# export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 
 
 ############
@@ -123,6 +123,7 @@ setopt HIST_IGNORE_SPACE
 setopt NO_AUTO_CD
 setopt INTERACTIVE_COMMENTS
 setopt PROMPT_SUBST
+unsetopt BEEP                       # no bell in terminal
 
 # No scrolllock
 stty -ixon
