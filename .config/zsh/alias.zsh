@@ -52,6 +52,8 @@ alias grep='grep --color=auto --exclude-dir={.git,.svn,.hg}'
 alias egrep='egrep --color=auto --exclude-dir={.git,.svn,.hg}'
 alias diff='diff --color=auto'
 alias journalctl='journalctl -r'
+alias gdb='gdb -q'
+alias pacman='pacman --color auto'
 
 # tty aliases
 if [[ "$TERM" == 'linux' ]]; then
