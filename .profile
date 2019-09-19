@@ -85,3 +85,7 @@ export GPG_TTY=$(tty)
 
 # qt theme
 export QT_QPA_PLATFORMTHEME="qt5ct"
+
+# temp fix systemd bug
+export LC_ALL='en_US.UTF-8'
+export LC_CTYPE='en_US.UTF-8'
