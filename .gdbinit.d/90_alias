@@ -1,7 +1,7 @@
 # GDB config
 # - use with: https://github.com/cyrus-and/gdb-dashboard
 
-alias -a db  = dashboard
+alias -a db = dashboard
 alias -a dbo = dashboard -output
 alias -a dbw = dashboard expressions watch
 alias -a dbu = dashboard expressions unwatch

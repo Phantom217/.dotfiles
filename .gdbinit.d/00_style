@@ -1,5 +1,5 @@
 # GDB config
-# - use with https://github.com/cyrus-and/gdb-dashboard
+# - use with: https://github.com/cyrus-and/gdb-dashboard
 
 dashboard -style divider_fill_char_primary '─'
 dashboard -style divider_fill_style_primary '38;5;66'
