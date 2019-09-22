@@ -10,7 +10,7 @@
 local gears            = require("gears")
 
 local t_util           = require("config.util_theme")
-local os, math, string = os, math, string
+local os, math, string = os, math, string --luacheck: no unused
 
 local colors = { }
 
@@ -47,7 +47,7 @@ colors.bw_8             = "#504945"
 colors.bw_9             = "#3c3836"
 colors.bw_10            = "#282828"
 
-colors = t_util.set_colors(colors)
+colors = t_util.set_colors(colors) --luacheck: no unused
 
 -- Use _dir to preserve parent theme.dir
 local theme = require("themes.blackout.theme")

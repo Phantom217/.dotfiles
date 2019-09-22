@@ -140,7 +140,7 @@ local function factory(args)
     local m_text = t_util.text_markup_function(14, text_fg)
     local m_time_text = t_util.markup_function({bold=true, size=48}, text_fg)
     local m_date_text = t_util.markup_function({bold=true, size=18}, text_fg)
-    local m_weather_text = t_util.markup_function({size=16}, text_fg)
+    -- local m_weather_text = t_util.markup_function({size=16}, text_fg)
     -- }}}
 
     -- {{{ CLOCK
@@ -183,73 +183,73 @@ local function factory(args)
     }
     -- }}}
 
-    -- {{{ WEATHER
-    local weather = wibox.widget {
-        {
-            id     = "icon",
-            align  = "center",
-            widget = wibox.widget.textbox,
-        },
-        {
-            id     = "text",
-            text   = "",
-            align  = "center",
-            widget = wibox.widget.textbox,
-        },
-        id      = "weather",
-        spacing = 20,
-        layout  = wibox.layout.fixed.horizontal,
-    }
+    -- -- {{{ WEATHER
+    -- local weather = wibox.widget {
+    --     {
+    --         id     = "icon",
+    --         align  = "center",
+    --         widget = wibox.widget.textbox,
+    --     },
+    --     {
+    --         id     = "text",
+    --         text   = "",
+    --         align  = "center",
+    --         widget = wibox.widget.textbox,
+    --     },
+    --     id      = "weather",
+    --     spacing = 20,
+    --     layout  = wibox.layout.fixed.horizontal,
+    -- }
 
-    local daylight = wibox.widget {
-        {
-            id     = "sun_text",
-            text   = "",
-            align  = "center",
-            widget = wibox.widget.textbox,
-        },
-        {
-            id     = "sun",
-            align  = "center",
-            widget = wibox.widget.textbox,
-        },
-        {
-            id     = "arrow",
-            align  = "center",
-            widget = wibox.widget.textbox,
-        },
-        {
-            id     = "moon",
-            align  = "center",
-            widget = wibox.widget.textbox,
-        },
-        {
-            id     = "moon_text",
-            text   = "",
-            align  = "center",
-            widget = wibox.widget.textbox,
-        },
-        id      = "daylight",
-        spacing = 20,
-        layout  = wibox.layout.fixed.horizontal,
-    }
+    -- local daylight = wibox.widget {
+    --     {
+    --         id     = "sun_text",
+    --         text   = "",
+    --         align  = "center",
+    --         widget = wibox.widget.textbox,
+    --     },
+    --     {
+    --         id     = "sun",
+    --         align  = "center",
+    --         widget = wibox.widget.textbox,
+    --     },
+    --     {
+    --         id     = "arrow",
+    --         align  = "center",
+    --         widget = wibox.widget.textbox,
+    --     },
+    --     {
+    --         id     = "moon",
+    --         align  = "center",
+    --         widget = wibox.widget.textbox,
+    --     },
+    --     {
+    --         id     = "moon_text",
+    --         text   = "",
+    --         align  = "center",
+    --         widget = wibox.widget.textbox,
+    --     },
+    --     id      = "daylight",
+    --     spacing = 20,
+    --     layout  = wibox.layout.fixed.horizontal,
+    -- }
 
-    m_symbol(daylight.sun, "")
-    m_symbol(daylight.moon, "")
-    -- m_symbol(daylight.arrow, "")
-    -- m_symbol(daylight.arrow, "")
-    m_symbol(daylight.arrow, "-")
+    -- m_symbol(daylight.sun, "")
+    -- m_symbol(daylight.moon, "")
+    -- -- m_symbol(daylight.arrow, "")
+    -- -- m_symbol(daylight.arrow, "")
+    -- m_symbol(daylight.arrow, "-")
 
-    brokers.weather:add_callback(function(x)
-        m_symbol(weather.icon, t_util.get_icon(x.data.weather[1].icon))
-        m_weather_text(weather.text, string.format("%s, %s°C", x.data.weather[1].description, x.data.main.temp))
-        m_weather_text(daylight.sun_text, os.date("%H:%M", x.data.sys.sunrise))
-        m_weather_text(daylight.moon_text, os.date("%H:%M", x.data.sys.sunset))
-    end)
+    -- brokers.weather:add_callback(function(x)
+    --     m_symbol(weather.icon, t_util.get_icon(x.data.weather[1].icon))
+    --     m_weather_text(weather.text, string.format("%s, %s°C", x.data.weather[1].description, x.data.main.temp))
+    --     m_weather_text(daylight.sun_text, os.date("%H:%M", x.data.sys.sunrise))
+    --     m_weather_text(daylight.moon_text, os.date("%H:%M", x.data.sys.sunset))
+    -- end)
 
-    weather:buttons(brokers.weather.buttons)
-    daylight:buttons(brokers.weather.buttons)
-    -- }}}
+    -- weather:buttons(brokers.weather.buttons)
+    -- daylight:buttons(brokers.weather.buttons)
+    -- -- }}}
 
     -- {{{ AUDIO
     local audio = bar(bar_args)
@@ -515,18 +515,18 @@ local function factory(args)
                         spacing = 20,
                         layout = wibox.layout.fixed.vertical,
                     },
-                    {
-                        {
-                            weather,
-                            widget = wibox.container.place,
-                        },
-                        {
-                            daylight,
-                            widget = wibox.container.place,
-                        },
-                        spacing = 20,
-                        layout = wibox.layout.fixed.vertical,
-                    },
+                    -- {
+                    --     {
+                    --         weather,
+                    --         widget = wibox.container.place,
+                    --     },
+                    --     {
+                    --         daylight,
+                    --         widget = wibox.container.place,
+                    --     },
+                    --     spacing = 20,
+                    --     layout = wibox.layout.fixed.vertical,
+                    -- },
                     {
                         forced_height = 30,
                         widget = wibox.container.background,
