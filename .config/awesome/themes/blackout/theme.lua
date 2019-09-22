@@ -373,13 +373,14 @@ local clock_widget = wibox.widget
 -- }}}
 
 -- {{{ CALENDAR
-lain.widget.cal
-{
-    cal                 = "cal --color=always --monday",
-    attach_to           = { clock_widget },
-    icons               = "",
-    notification_preset = naughty.config.presets.normal,
-}
+-- lain.widget.cal
+-- {
+--     cal                 = "cal --color=always --monday",
+--     -- cal                 = wibox.widget.calendar.month(os.date('*t')),
+--     attach_to           = { clock_widget },
+--     icons               = "",
+--     notification_preset = naughty.config.presets.normal,
+-- }
 -- }}}
 
 -- -- {{{ CALENDAR
