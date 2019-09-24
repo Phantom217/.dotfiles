@@ -367,11 +367,11 @@ function _config.init()
         end,
                   { description = "toggle hidden widget", group = "widget" }),
 
-        -- Show weather notification
-        awful.key({ k.m, k.c           }, "w", function()
-            brokers.weather:show()
-        end,
-                  { description = "show weather notification", group = "widget" }),
+        -- -- Show weather notification
+        -- awful.key({ k.m, k.c           }, "w", function()
+        --     brokers.weather:show()
+        -- end,
+        --           { description = "show weather notification", group = "widget" }),
 
         -- Volume
         awful.key({                    }, "XF86AudioRaiseVolume", function()
