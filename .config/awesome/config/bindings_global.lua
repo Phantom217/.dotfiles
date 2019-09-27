@@ -124,7 +124,7 @@ function _config.init()
             awful.spawn.easy_async("rofi -show run", function() end)
         end,
                   { description = "show commands menu (rofi)", group = "launcher" }),
-        awful.key({ k.m                }, "$", function()
+        awful.key({ k.m, k.c           }, "`", function()
             awful.spawn.easy_async(table.concat { context.vars.scripts_dir, "/rofi-session" }, function() end)
         end,
                   { description = "show session menu (rofi)", group = "launcher" }),
