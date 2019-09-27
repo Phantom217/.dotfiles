@@ -103,6 +103,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'lervag/vimtex', { 'for': ['latex', 'tex'] }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+Plug 'dart-lang/dart-vim-plugin'
 
 " Syntax
 Plug 'cespare/vim-toml'
@@ -719,6 +720,13 @@ imap <M-z> <Plug>(PearTreeJump)
 let g:racer_cmd="/usr/bin/racer"
 let g:racer_experimental_completer=0
 
+"" Dart-Vim-Plugin
+let dart_html_in_string=v:true      " default: false
+let dart_corelib_highlight=v:false  " default: true
+let dart_highlight_types=v:false    " default: true
+let dart_style_guide=2
+let dart_format_on_save=1
+
 " "" NCM2
 " let g:ncm2#complete_delay=60
 " let g:ncm2#popup_delay=300
@@ -751,6 +759,7 @@ let g:LanguageClient_serverCommands = {
             \ 'python': ['pyls'],
             \ 'lua':    ['lua-lsp'],
             \ 'sh':     ['bash-language-server', 'start'],
+            \ 'scala':  ['metals-vim'],
             \ }
 
 let g:LanguageClient_diagnosticsDisplay = {
