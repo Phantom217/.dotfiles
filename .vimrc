@@ -759,7 +759,6 @@ let g:LanguageClient_serverCommands = {
             \ 'python': ['pyls'],
             \ 'lua':    ['lua-lsp'],
             \ 'sh':     ['bash-language-server', 'start'],
-            \ 'scala':  ['metals-vim'],
             \ }
 
 let g:LanguageClient_diagnosticsDisplay = {
