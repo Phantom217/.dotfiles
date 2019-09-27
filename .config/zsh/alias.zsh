@@ -54,6 +54,10 @@ alias diff='diff --color=auto'
 alias journalctl='journalctl -r'
 alias gdb='gdb -q'
 alias pacman='pacman --color auto'
+alias vi='nvim'
+
+# connect to server for 401
+alias ssh_g207='ssh -p4422 opencs2.selu.edu -l g207'
 
 # tty aliases
 if [[ "$TERM" == 'linux' ]]; then
@@ -428,6 +432,3 @@ ranger-cd-widget() {
 }
 zle     -N     ranger-cd-widget
 bindkey '\e^o' ranger-cd-widget
-
-# connect to server for 401
-alias ssh_g207='ssh -p4422 opencs2.selu.edu -l g207'
