@@ -1,0 +1,4 @@
+# Basic options
+--fields=+l
+--recurse=yes
+--tag-relative=yes

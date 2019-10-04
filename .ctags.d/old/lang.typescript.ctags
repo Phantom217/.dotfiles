@@ -1,0 +1,4 @@
+# TypeScript
+--langdef=typescript
+--langmap=typescript:.ts
+--langmap=typescript:.tsx

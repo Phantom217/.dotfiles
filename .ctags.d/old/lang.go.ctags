@@ -1,0 +1,3 @@
+# Go
+--langdef=Go
+--langmap=Go:.go

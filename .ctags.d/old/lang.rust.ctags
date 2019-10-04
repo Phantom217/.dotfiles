@@ -1,0 +1,3 @@
+# Rust
+--langdef=Rust
+--langmap=Rust:.rs

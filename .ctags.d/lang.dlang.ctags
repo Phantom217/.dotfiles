@@ -1,0 +1,3 @@
+# Dlang
+--langdef=dlang
+--langmap=dlang:.d

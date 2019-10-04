@@ -1,0 +1,3 @@
+# Clojure
+--langdef=Clojure
+--langmap=Clojure:.clj
