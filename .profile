@@ -28,6 +28,9 @@ export PATH="$GO_HOME/bin:$PATH"
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 export PATH="$JAVA_HOME/bin:$PATH"
 
+# android sdk
+export ANDROID_SDK_ROOT="$HOME/Android/Sdk"
+
 # user scripts
 export PATH="$HOME/.bin:$PATH"
 
