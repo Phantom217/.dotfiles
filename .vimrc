@@ -243,7 +243,7 @@ onoremap <silent> ae :<C-u>normal! G$Vgg0<CR>
 " Select last inserted text
 nnoremap gV `[v`]
 
-" Move cursor by dipslay lines when wrapping
+" Move cursor by display lines when wrapping
 nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 xnoremap <expr> j v:count ? 'j' : 'gj'
@@ -348,7 +348,7 @@ let g:fzf_action = {
 " Default fzf layout
 let g:fzf_layout = { 'down': '~30%' }
 
-" Customize the options used by 'git log'
+" Customize the options used by `git log`
 let g:fzf_commits_log_options='--graph --color=always --format="%c(auto)%h%d %s %c(black)%c(bold)%cr"'
 
 " Command to generate tags file
@@ -438,9 +438,9 @@ command! Note :Grepper -tool rg -query '(NOTE)'
 
 " Open the location/quickfix window automatically if there are valid entries in the list.
 augroup quickfix
-	autocmd!
-	autocmd QuickFixCmdPost cgetexpr cwindow
-	autocmd QuickFixCmdPost lgetexpr lwindow
+    autocmd!
+    autocmd QuickFixCmdPost cgetexpr cwindow
+    autocmd QuickFixCmdPost lgetexpr lwindow
 augroup END
 
 " Use :Grep instead of :grep! and :LGrep instead of :lgrep!.
@@ -535,15 +535,15 @@ let g:airline#extensions#hunks#enabled=0
 
 "" GitGutter
 let g:gitgutter_map_keys=0
-nmap <leader>ha <Plug>GitGutterStageHunk
-nmap <leader>hu <Plug>GitGutterUndoHunk
-nmap ]c <Plug>GitGutterNextHunk
-nmap [c <Plug>GitGutterPrevHunk
+nmap <leader>ha <Plug>(GitGutterStageHunk)
+nmap <leader>hu <Plug>(GitGutterUndoHunk)
+nmap ]c <Plug>(GitGutterNextHunk)
+nmap [c <Plug>(GitGutterPrevHunk)
 
-omap ih <Plug>GitGutterTextObjectInnerPending
-omap ah <Plug>GitGutterTextObjectOuterPending
-xmap ih <Plug>GitGutterTextObjectInnerVisual
-xmap ah <Plug>GitGutterTextObjectOuterVisual
+omap ih <Plug>(GitGutterTextObjectInnerPending)
+omap ah <Plug>(GitGutterTextObjectOuterPending)
+xmap ih <Plug>(GitGutterTextObjectInnerVisual)
+xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 
 let g:gitgutter_sign_added='┃'
 let g:gitgutter_sign_modified='┃'
@@ -590,6 +590,7 @@ nnoremap <silent> <F12> :UndotreeToggle<CR>
 
 "" Tagbar
 nnoremap <silent> <F11> :TagbarToggle<CR>
+set tags=tags
 
 "" After text object
 augroup AfterTextObject
@@ -744,6 +745,12 @@ let dart_format_on_save=1
 "     " autocmd User Ncm2PopupOpen set completeopt=menuone,noinsert,noselect
 "     " autocmd User Ncm2PopupClose set completeopt=menuone
 " augroup END
+
+"" Vim-Scala
+let g:scala_use_builtin_tagbar_defs=0
+let g:scala_use_default_keymappings=0
+let g:scala_scaladoc_indent=1
+let g:scala_sort_across_groups=1
 
 "" LanguageClient
 let g:LanguageClient_autoStart=1
@@ -929,6 +936,7 @@ inoremap <silent> <C-k> <C-r>=ExpandLspSnippet()<CR>
 " endfunction
 "
 " autocmd CompleteDone * call CompleteSnippet()
+
 
 """"""""""""""
 "  SETTINGS  "
@@ -1249,3 +1257,7 @@ silent! source .local.vimrc
 "           https://github.com/euclio/vimrc/blob/master/vimrc
 "           https://github.com/KevOBrien/dotfiles
 "           https://bitbucket.org/sjl/dotfiles/src/28205343c464b44fd36970d2588a74183ff73299/vim/vimrc
+
+
+
+"" vim: filetype=vim:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
