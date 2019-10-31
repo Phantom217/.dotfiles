@@ -34,8 +34,8 @@ fi
 dotfiles="$HOME/projects/dotfiles.sh/dotfiles"
 
 # Clone dotfiles repo
-highlight 'Clone gh://alfunx/.dotfiles'
-$dotfiles clone 'https://github.com/alfunx/.dotfiles' \
+highlight 'Clone gh://phantom217/.dotfiles'
+$dotfiles clone 'https://github.com/phantom217/.dotfiles' \
     "$HOME/.dotfiles"
 
 # Load submodules
