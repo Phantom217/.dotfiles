@@ -59,6 +59,9 @@ alias vi='nvim'
 # connect to server for 401
 alias ssh_g207='ssh -p4422 opencs2.selu.edu -l g207'
 
+# launch android emulator
+alias :e='$ANDROID_SDK_ROOT/emulator/emulator @Pixel_XL_API_24 &>/dev/null &'
+
 # tty aliases
 if [[ "$TERM" == 'linux' ]]; then
     alias tmux='/usr/bin/tmux -L linux'
