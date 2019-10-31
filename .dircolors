@@ -179,7 +179,7 @@ LINK 35
 
 # orphaned symlinks
 ORPHAN 01;07;91
-MISSING 01
+MISSING 01;01;41
 
 # files with execute permission
 EXEC 91  # Unix
@@ -272,6 +272,8 @@ CHR 04;01;97
 .go 32
 .sql 32
 .csv 32
+.scala 32
+.sbt 32
 
 ### Multimedia formats
 
