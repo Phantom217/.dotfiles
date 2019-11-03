@@ -103,7 +103,9 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'lervag/vimtex', { 'for': ['latex', 'tex'] }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
-Plug 'dart-lang/dart-vim-plugin'
+Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
+Plug 'derekwyatt/vim-scala', { 'for': ['scala', 'sbt'] }
+Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 
 " Syntax
 Plug 'cespare/vim-toml'
@@ -754,6 +756,9 @@ let g:scala_use_builtin_tagbar_defs=0
 let g:scala_use_default_keymappings=0
 let g:scala_scaladoc_indent=1
 let g:scala_sort_across_groups=1
+let g:scala_first_party_namespaces='\(com\)'
+
+au BufRead,BufNewFile *.sbt set filetype=scala
 
 "" LanguageClient
 let g:LanguageClient_autoStart=1
