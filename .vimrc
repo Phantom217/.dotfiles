@@ -600,6 +600,9 @@ augroup End
 
 "" Vimtex
 let g:vimtex_view_method='zathura'
+if has('nvim')
+    let g:vimtex_compiler_progname = 'nvr'
+endif
 
 "" UltiSnips
 let g:UltiSnipsExpandTrigger='<Tab>'
