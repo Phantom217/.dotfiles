@@ -13,7 +13,7 @@ shift
 case $cmd in
 
     vim)
-        vim \
+        nvim \
             ~/.vimrc \
             ~/.vim/after/**/* \
             ~/.vim/syntax/* \
@@ -21,14 +21,14 @@ case $cmd in
         ;;
 
     tmux)
-        vim \
+        nvim \
             ~/.tmux.conf \
             ~/.config/tmux/**/* \
             "$@"
         ;;
 
     git)
-        vim \
+        nvim \
             ~/.gitconfig \
             ~/.gitignore \
             ~/.gitmodules \
@@ -38,13 +38,13 @@ case $cmd in
         ;;
 
     aur|aurutils)
-        vim \
+        nvim \
             ~/.bin/aur-* \
             "$@"
         ;;
 
     zsh)
-        vim \
+        nvim \
             ~/.zshrc \
             ~/.config/zsh/* \
             ~/.zprofile \
@@ -53,7 +53,7 @@ case $cmd in
         ;;
 
     bash)
-        vim \
+        nvim \
             ~/.bashrc \
             ~/.config/bash/* \
             ~/.bash_profile \
@@ -62,7 +62,7 @@ case $cmd in
         ;;
 
     aw|awesome)
-        vim \
+        nvim \
             ~/.config/awesome/rc.lua \
             ~/.config/awesome/themes/blackout/theme.lua \
             ~/.config/awesome/themes/whiteout/theme.lua \
@@ -75,30 +75,30 @@ case $cmd in
         ;;
 
     xorg)
-        vim \
+        nvim \
             ~/.xinitrc \
             "$@"
         ;;
 
     gdb)
-        vim \
+        nvim \
             ~/.gdbinit \
             ~/.gdbinit.d/**/* \
             "$@"
         ;;
 
     bin)
-        vim \
+        nvim \
             ~/.bin/* \
             "$@"
         ;;
 
     conf)
-        vim "$0"
+        nvim "$0"
         ;;
 
     *)
-        vim "$cmd" "$@"
+        nvim "$cmd" "$@"
         ;;
 
 esac
