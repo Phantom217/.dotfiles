@@ -32,6 +32,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-speeddating'
+Plug 'Konfekt/vim-CtrlXA'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-sleuth'
@@ -40,8 +41,8 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-commentary'
-"Plug 'tomtom/tcomment_vim'
+"Plug 'tpope/vim-commentary'
+Plug 'alfunx/tcomment_vim'   " fork of 'tomtom/tcomment_vim'
 Plug 'alfunx/diffconflicts'  " fork of 'whiteinge/diffconflicts'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'airblade/vim-gitgutter'
@@ -58,11 +59,12 @@ Plug 'mbbill/undotree'
 Plug 'ap/vim-css-color'
 Plug 'xtal8/traces.vim'
 Plug 'chrisbra/NrrwRgn'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'majutsushi/tagbar'
 "Plug 'ludovicchabant/vim-gutentags'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'romainl/vim-qf'
+Plug 'sheerun/vim-polyglot'
 
 " Text objects
 Plug 'wellle/targets.vim'
@@ -103,6 +105,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'lervag/vimtex', { 'for': ['latex', 'tex'] }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 Plug 'derekwyatt/vim-scala', { 'for': ['scala', 'sbt'] }
 Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
@@ -144,9 +147,11 @@ if !has('nvim')
     execute "set <M-9>=\<Esc>9"
     execute "set <M-b>=\<Esc>b"
     execute "set <M-e>=\<Esc>e"
+    execute "set <M-S-h>=\<Esc>H"
     execute "set <M-h>=\<Esc>h"
     execute "set <M-j>=\<Esc>j"
     execute "set <M-k>=\<Esc>k"
+    execute "set <M-S-l>=\<Esc>L"
     execute "set <M-l>=\<Esc>l"
     execute "set <M-n>=\<Esc>n"
     execute "set <M-p>=\<Esc>p"
@@ -194,6 +199,8 @@ nnoremap <silent> <C-w><C-t> :tabnew<CR>
 " Tab navigation
 nnoremap <silent> <C-w><C-h> gT
 nnoremap <silent> <C-w><C-l> gt
+nnoremap <silent> <M-S-h> gT
+nnoremap <silent> <M-S-l> gT
 
 " Fullscreen
 nnoremap <silent> <C-w>F <C-w>_<C-w><Bar>
@@ -332,6 +339,12 @@ nnoremap <silent> <M-k> {
 xnoremap <silent> <M-k> {
 onoremap <silent> <M-k> {
 
+" Copy path:line
+" nnoremap <silent> <F4> :<C-U>exe "!tmux send -t " . v:count . " 'b " . expand("%:p") . ":" . line(".") . "' C-m"<CR>
+" nnoremap <silent> <F4> :call system("tmux send -t monetDB:server 'b " . expand("%:p") . ":" . line(".") . "' C-m")<CR>
+nnoremap <silent> <F4> :<C-u>let @+ = expand("%:p") . ":" . line(".")<CR>
+
+" Display highlighting info
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
             \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
             \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
@@ -574,10 +587,10 @@ let g:incsearch#no_inc_hlsearch=1
 let g:incsearch#separate_highlight=1
 let g:incsearch#no_inc_hlsearch=1
 
-" "" TComment
-" let g:tcomment_mapleader1='<C-,>'
-" nnoremap <leader>c V:TCommentInline<CR>
-" xnoremap <leader>c :TCommentInline<CR>
+"" TComment
+let g:tcomment_mapleader1='<C-,>'
+nnoremap <leader>c V:TCommentInline<CR>
+xnoremap <leader>c :TCommentInline<CR>
 
 "" Netrw
 let g:netrw_liststyle=0
@@ -588,10 +601,10 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 "" Undotree
-nnoremap <silent> <F12> :UndotreeToggle<CR>
+nnoremap <silent> <F11> :UndotreeToggle<CR>
 
 "" Tagbar
-nnoremap <silent> <F11> :TagbarToggle<CR>
+nnoremap <silent> <F12> :TagbarToggle<CR>
 set tags=tags
 
 "" After text object
@@ -767,13 +780,14 @@ let g:LanguageClient_hoverPreview="Always"
 let g:LanguageClient_hasSnippetSupport=1
 
 let g:LanguageClient_serverCommands = {
-            \ 'rust':   ['rustup', 'run', 'stable', 'rls'],
-            \ 'java':   ['jdtls'],
-            \ 'c':      ['ccls'],
-            \ 'cpp':    ['ccls'],
-            \ 'python': ['pyls'],
-            \ 'lua':    ['lua-lsp'],
-            \ 'sh':     ['bash-language-server', 'start'],
+            \ 'haskell': ['hie-wrapper'],
+            \ 'rust':    ['rustup', 'run', 'stable', 'rls'],
+            \ 'java':    ['jdtls'],
+            \ 'c':       ['ccls'],
+            \ 'cpp':     ['ccls'],
+            \ 'python':  ['pyls'],
+            \ 'lua':     ['lua-lsp'],
+            \ 'sh':      ['bash-language-server', 'start'],
             \ }
 
 let g:LanguageClient_diagnosticsDisplay = {
@@ -814,6 +828,7 @@ function! LanguageClient_settings()
     nnoremap <buffer><silent> K :call LanguageClient_contextMenu()<CR>
     nnoremap <buffer><silent> <F1> :call LanguageClient_textDocument_hover()<CR>
     nnoremap <buffer><silent> <leader>d :call LanguageClient_textDocument_definition()<CR>
+    nnoremap <buffer><silent> <leader>i :call LanguageClient#textDocument_implementation()<CR>
     nnoremap <buffer><silent> <leader>x :call LanguageClient_textDocument_typeDefinition()<CR>
     nnoremap <buffer><silent> <leader>y :call LanguageClient_textDocument_documentSymbol()<CR>
     nnoremap <buffer><silent> <leader>u :call LanguageClient_textDocument_references()<CR>
@@ -837,6 +852,10 @@ augroup LanguageClient_settings
     autocmd!
     autocmd FileType * call LanguageClient_settings()
 augroup END
+
+"" Speeddating
+nmap <Plug>SpeedDatingFallbackUp   <Plug>(CtrlXA-CtrlA)
+nmap <Plug>SpeedDatingFallbackDown <Plug>(CtrlXA-CtrlX)
 
 "" Unimpaired
 let g:nremap={"[": "ü", "]": "¨"}
@@ -962,9 +981,10 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=atIc
 set lazyredraw
 set mouse=a
-set diffopt+=hiddenoff,algorithm:histogram
+set diffopt+=hiddenoff,internal,algorithm:histogram
 
 set cursorline
+"if &diff | set nocursorline | endif
 set textwidth=80
 set wrapmargin=0
 set nowrap
@@ -1008,7 +1028,7 @@ set linespace=0
 set scrolloff=3
 set sidescrolloff=5
 set backspace=indent,eol,start
-set formatoptions+=roj
+set formatoptions+=rj formatoptions-=o
 set nrformats-=octal
 set pastetoggle=<F2>
 set dictionary+=/usr/share/dict/words-insane
@@ -1161,7 +1181,11 @@ if !has('nvim')
     set viminfo=%,\"800,'10,/50,:100,h,f0,n~/.vim/.viminfo
     augroup SavePosition
         autocmd!
-        autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | execute 'normal! g`"zvzz' | endif
+        autocmd BufReadPost *
+                    \ if index(['gitcommit', 'gitrebase'], &ft) < 0 &&
+                    \ line("'\"") > 0 && line("'\"") <= line("$") |
+                    \ execute 'normal! g`"zvzz' |
+                    \ endif
     augroup END
 endif
 
