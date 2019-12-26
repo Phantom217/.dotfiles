@@ -1,8 +1,8 @@
 " lightline-languageclient
 " Maintainer: Tyler Oalman <tyleroalman@gmail.com>
-" Version:	0.1.0
-" Location:	autoload/languageclient.vim
-" Website:	https://github.com/alfunx/vim-lightline-languageclient
+" Version: 0.1.0
+" Location: autoload/languageclient.vim
+" Website: https://github.com/alfunx/vim-lightline-languageclient
 
 let s:save_cpo = &cpo
 set cpo&vim
@@ -84,4 +84,4 @@ augroup END
 
 let &cpo = s:save_cpo
 
-" vim: et ts=4 sts=4 sw=4
+" vim: set et ts=4 sw=4 sts=0 tw=80 fdm=marker:
