@@ -21,15 +21,15 @@ export PATH="$HOME/.gem/ruby/2.5.0/bin:$PATH"
 export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 
 # go
-export PATH="$HOME/go:$PATH"
-export PATH="$GO_HOME/bin:$PATH"
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
 
 # java
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 export PATH="$JAVA_HOME/bin:$PATH"
 
-# android sdk
-export ANDROID_SDK_ROOT="$HOME/Android/Sdk"
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # user scripts
 export PATH="$HOME/.bin:$PATH"
