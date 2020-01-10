@@ -73,7 +73,7 @@ config.context.init {
         sloppy_focus     = false,
         start_as_slave   = false,
         terminal         = "kitty ",
-        browser          = "chromium ",
+        browser          = "firefox ",
         net_iface        = "wlp3s0",
         ping_ip          = "8.8.8.8",
         cores            = 4,
