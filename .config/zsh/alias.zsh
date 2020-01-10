@@ -15,16 +15,22 @@ alias .......='cd ../../../../../..'
 alias ........='cd ../../../../../../..'
 
 # ls variants
-alias l='ls -FAh'
-alias la='ls -lAFh'
-alias lt='ls -lFAht'
-alias lr='ls -RFAh'
+alias l='exa --classify --all --git' # `-Fa`
+alias la='exa --classify --long --all --git' # `-Fla`
+alias lt='exa --classify --long --all --time=modified --git' # `-Flat modified`
+alias lr='exa --classify --long --all --recurse --git' # `-FlaR`
+# alias l='ls -FAh'
+# alias la='ls -lAFh'
+# alias lt='ls -lFAht'
+# alias lr='ls -RFAh'
 
 # more ls variants
-alias ldot='ls -ld .*'
-alias lS='ls -1FASsh'
+alias ldot='exa --long --list-dirs .* --git'  # `-ld .*`
+# alias lart='exa --classify --all' # `-Fa`
 alias lart='ls -1Fcart'
 alias lrt='ls -1Fcrt'
+alias lS='ls -1FASsh'
+# alias ldot='ls -ld .*'
 
 # ls with different alphabethical sorting
 unalias ll
@@ -55,9 +61,9 @@ alias journalctl='journalctl -r'
 alias gdb='gdb -q'
 alias pacman='pacman --color auto'
 alias vi='nvim'
-
-# connect to server for 401
-alias ssh_g207='ssh -p4422 opencs2.selu.edu -l g207'
+alias vim='nvim'
+alias du='dust'
+alias cat='bat'
 
 # launch android emulator
 alias :e='$ANDROID_SDK_ROOT/emulator/emulator @Pixel_XL_API_24 &>/dev/null &'
