@@ -9,5 +9,6 @@ nnoremap <buffer><silent> gf :Fixup<CR>
 nnoremap <buffer><silent> gd :Drop<CR>
 nnoremap <buffer><silent> gb :obreak<CR>
 nnoremap <buffer><silent> gB :Obreak<CR>
+
 nnoremap <buffer><silent> S :Cycle<CR>
 nnoremap <buffer><silent> K :Cycle<CR>
