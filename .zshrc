@@ -187,3 +187,5 @@ source <(kitty + complete setup zsh)
 
 # Debug
 #zprof
+
+source /home/phantom/.config/broot/launcher/bash/br
