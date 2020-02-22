@@ -36,3 +36,5 @@ PS1='[\[\033[1;31m\]\u\[\033[0m\]@\H \w]$ '
 # FZF
 [[ -f "$BASH_CONFIG/fzf.bash" ]] \
     && source "$BASH_CONFIG/fzf.bash"
+
+source /home/phantom/.config/broot/launcher/bash/br
