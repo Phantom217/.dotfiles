@@ -65,9 +65,6 @@ alias vim='nvim'
 alias du='dust'
 alias cat='bat'
 
-# launch android emulator
-alias :e='$ANDROID_SDK_ROOT/emulator/emulator @Pixel_XL_API_24 &>/dev/null &'
-
 # tty aliases
 if [[ "$TERM" == 'linux' ]]; then
     alias tmux='/usr/bin/tmux -L linux'
@@ -212,6 +209,32 @@ bindkey '^H' backward-kill-word
 
 # ctrl+shift+delete
 bindkey "\e[3;6~" kill-line
+
+
+###########
+#  RSYNC  #
+###########
+
+cpr() {
+    rsync --archive \
+          -hh \
+          --partial \
+          --info=stats1 \
+          --info=progress2 \
+          --modify-window=1 \
+          "$@"
+}
+
+mvr() {
+    rsync --archive \
+          -hh \
+          --partial \
+          --info=stats1 \
+          --info=progress2 \
+          --modify-window=1 \
+          --remove-source-files \
+          "$@"
+}
 
 
 #########
