@@ -1,0 +1,23 @@
+# cache
+--exclude=\*.cache
+--exclude=\*.log
+--exclude=\*~
+--exclude=\*#
+--exclude=\*.bak
+--exclude=\*.BAK
+--exclude=\*.old
+--exclude=\*.OLD
+--exclude=\*.off
+--exclude=\*.OFF
+--exclude=\*.dist
+--exclude=\*.DIST
+--exclude=\*.orig
+--exclude=\*.ORIG
+--exclude=\*.rej
+--exclude=\*.REJ
+--exclude=\*.swp
+--exclude=\*.swo
+--exclude=\*.swn
+--exclude=\*.swm
+--exclude=\*.tmp
+--exclude=\*.sln

@@ -1,0 +1,4 @@
+# compiler
+--exclude=.ccls-cache
+--exclude=.clangd
+--exclude=compile_commands.json

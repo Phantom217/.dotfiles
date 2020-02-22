@@ -1,0 +1,10 @@
+# tools
+--exclude=tags
+--exclude=.tags
+--exclude=.tmux
+--exclude=.backup
+--exclude=.vim-backup
+--exclude=.swap
+--exclude=.vim-swap
+--exclude=.undo
+--exclude=.vim-undo

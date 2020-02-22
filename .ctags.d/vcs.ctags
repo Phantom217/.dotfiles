@@ -1,0 +1,4 @@
+# vcs
+--exclude=.git
+--exclude=.hg
+--exclude=.svn

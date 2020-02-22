@@ -1,0 +1,13 @@
+# packages
+--exclude=node_modules
+--exclude=.bundle
+--exclude=\*.map
+--exclude=\*.Master
+--exclude=min
+--exclude=\*.min.\*
+--exclude=\*.pdb
+--exclude=\*.pyc
+--exclude=.sass-cache
+--exclude=\*.tar.\*
+--exclude=tmp
+--exclude=vendor

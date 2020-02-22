@@ -1,0 +1,6 @@
+# xquery
+--langdef=xquery
+--langmap=xquery:.xq
+--regex-xquery=/^(declare|define)[ \t]*(private)?[ \t]*(%an:automatic)?[ \t]*variable[ \t]*\$([_a-zA-Z0-9:-]*:)?([_a-zA-Z0-9-]+)/\5/v,variable/
+--regex-xquery=/^(declare|define)[ \t]*(private)?[ \t]*(updating)?[ \t]*(%an:sequential)?[ \t]*(%an:nondeterministic)?[ \t]*function[ \t]*([_a-zA-Z0-9:-]*:)?([_a-zA-Z0-9-]+)/\7/f,function/
+--regex-xquery=/^module namespace[ \t]*(\w+)[ \t]*=.*/\1/m,module/

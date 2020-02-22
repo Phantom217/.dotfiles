@@ -1,0 +1,7 @@
+# binary
+--exclude=\*.o
+--exclude=\*.so
+--exclude=\*.class
+--exclude=\*.exe
+--exclude=\*.dll
+--exclude=\*.com
